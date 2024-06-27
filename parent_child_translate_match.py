@@ -1,8 +1,8 @@
 # What does this code do ? 
 # DESCRIPTION : It matches the translate of the imported rigs to the set selected
 # What does a user need to do to run the script ? 
-# DESCRIPTION: the user needs to provide a list of rigs to translate into the LIST "child_object_list".
-#              The user needs to select the set and run the script to transform the rigs to the desired set.
+# DESCRIPTION: User needs to provide a list of rigs to translate into the LIST "child_object_list".
+#              User needs to select the set and run the script to transform the rigs to the desired set.
 # How to  run the script ?
 # DESCRIPTION: copy this script into your python tab of the script editor and press run
 # Assumptions made in the script:
