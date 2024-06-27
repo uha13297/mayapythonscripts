@@ -1,5 +1,5 @@
 # What does this code do ? 
-# DESCRIPTION : It matches the translate of the imported rigs to the set selected
+# DESCRIPTION : It matches the translate of the imported rigs to the set selected.
 # What does a user need to do to run the script ? 
 # DESCRIPTION: User needs to provide a list of rigs to translate into the LIST "child_object_list".
 #              User needs to select the set and run the script to transform the rigs to the desired set.
@@ -8,8 +8,10 @@
 # Assumptions made in the script:
 # DESCRIPTION: This code assumes that you have already imported/referenced the child object into Maya scene.
 
+
 import maya.cmds as cmds
 
+# Modify the list as needed
 child_object_list = ['zelda_V001_008:Bip001_GLOBAL', 'link_V001_004:Bip001_GLOBAL' , 'ganon_V001_002_file011:Bip001_GLOBAL']
 selected_objects = cmds.ls(selection=True)
 if selected_objects:
