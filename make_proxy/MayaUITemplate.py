@@ -1,6 +1,7 @@
 """
+This code is originally but isaacoster
+I have modified it to serve the purpose of my project
 Maya/QT UI template
-Maya 2023
 """
 
 import maya.cmds as cmds
