@@ -25,33 +25,33 @@ The proxy rigs included in this project were created by me to facilitate quick a
 
 
 
-###3. Attribute Randomizer
+3. Attribute Randomizer
 This tool allows animators to quickly randomize key attributes such as translation, rotation, and scale, helping to add noise, camera shake etc with ease.
 
-###Features
--**Randomization**: Custom sliders for translate, rotate, and scale attributes.
--**Range Control**: Adjustable randomization ranges for each attribute.
--**User-Friendly Interface**: Built with maya based UI for ease of use.
+Features
+-Randomization: Custom sliders for translate, rotate, and scale attributes.
+-Range Control: Adjustable randomization ranges for each attribute.
+-User-Friendly Interface: Built with maya based UI for ease of use.
 
 
 
-###4. Tween Machine
+4. Tween Machine
 The tween machine tool helps animators make inbetweens between selected keyframes, optimizing the animation process.
 
-###Features
--**Slider Control**: Adjust the interpolation percentage using a UI slider.
--**Keyframe Interpolation**: Automatically calculate values between keyframes.
--**Non-Destructive**: Create new keyframes without altering existing ones.
+Features
+-Slider Control: Adjust the interpolation percentage using a UI slider.
+-Keyframe Interpolation: Automatically calculate values between keyframes.
+-Non-Destructive: Create new keyframes without altering existing ones.
 
 
 
-###5. Pose Transfer
+5. Pose Transfer
 The Pose Transfer tool enables animators to transfer animation data between two rigs, making it easier to reuse animations across different characters or rigs.
 
-###Features
--**Controller Mapping**: Easily transfer keyframes between different rigs with no namespace errors.
--**Complete Transfer**: Full transfer of keyframes across a timeline.
--**Error Handling**: Warns users if rigs don't match or data is incomplete.
+Features
+-Controller Mapping: Easily transfer keyframes between different rigs with no namespace errors.
+-Complete Transfer: Full transfer of keyframes across a timeline.
+-Error Handling: Warns users if rigs don't match or data is incomplete.
 
 
 
