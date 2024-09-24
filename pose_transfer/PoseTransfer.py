@@ -1,5 +1,6 @@
 import maya.cmds as cmds
 
+
 def transfer_selected(*args):
     """Transfer pose from first selected rig to the rest of the selection."""
     namespaces = get_selected_namespaces()
@@ -13,8 +14,8 @@ def transfer_selected(*args):
         cmds.warning("Please select more than 1 rig with different namespaces!")
         return
     
-    source_namespace = namespaces[0]
-    target_namespaces = namespaces[1:]
+    source_namespace = namespaces[0] # first selected control
+    target_namespaces = namespaces[1:] #second selected controller and more
     
     pose_dict = get_pose_dict(source_namespace)
     
@@ -28,7 +29,7 @@ def transfer_selected(*args):
 
 
 def get_selected_namespaces():
-    """Get list of namespaces for selected rigs."""
+    #Getting list of namespaces for selected rigs
     selection = cmds.ls(selection=True)
     if len(selection) == 0:
         return []
@@ -41,7 +42,7 @@ def get_selected_namespaces():
     return namespace_list
 
 def get_attrs_from_node(ctrl_node):
-    """Get attribute names from node."""
+    #Getting attribute names from node
     attributes = cmds.listAnimatable(ctrl_node)
     if not attributes:
         return []
@@ -54,20 +55,22 @@ def get_attrs_from_node(ctrl_node):
     return attr_names
 
 def get_pose_dict(namespace):
-    """Get the pose dictionary without namespaces."""
+    #Getting the pose dictionary without namespaces
     selection = cmds.ls(selection=True)
     if not selection:
         return {}
 
     pose_dict = {}
     for ctrl in selection:
+        #if the controller starts with the source namespace, get all animatable attributes
         if ctrl.startswith(namespace):
             animatable_attrs = get_attrs_from_node(ctrl)
             if not animatable_attrs:
                 continue
-            
+                
+            #populating hte dictionary
             for attr in animatable_attrs:
-                attr_value = cmds.getAttr("{}.{}".format(ctrl, attr))
+                attr_value = cmds.getAttr("{}.{}".format(ctrl, attr)) #getting attribute values
                 ctrl_name = ctrl.split(":")[-1]
                 full_attr = "{}.{}".format(ctrl_name, attr)
                 pose_dict[full_attr] = attr_value
@@ -76,9 +79,9 @@ def get_pose_dict(namespace):
     return pose_dict
 
 def apply_pose(pose_dict, namespace):
-    """Apply provided pose to provided namespace."""
+    #Applying provided pose to provided namespace
     for attr_name in pose_dict.keys():
-       # need to add namespace
+       # adding the target namespace
        attr_value = pose_dict[attr_name]
        ctrl_name = '{}:{}'.format(namespace, attr_name)
 
