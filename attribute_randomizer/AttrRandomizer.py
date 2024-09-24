@@ -18,7 +18,7 @@ cmds.button(l="Randomize", c="main()")
 
 cmds.showWindow(Ran)
 
-
+#function to get attribute values of the selected controller
 def get_attr_value(ctrl):
     selection = cmds.ls(selection=True)
     if not selection:
@@ -36,17 +36,17 @@ def main():
 
     ctrl = selection[0]
 
-    # Query slider values
+    # Quering slider input values
     AR_T = cmds.intSliderGrp(AttRanT, q=True, value=True)
     AR_R = cmds.intSliderGrp(AttRanR, q=True, value=True)
     AR_S = cmds.intSliderGrp(AttRanS, q=True, value=True)
 
-    # Apply randomization
+    # Applying randomization
     trans_randomized(ctrl, AR_T)
     rot_randomized(ctrl, AR_R)
     scale_randomized(ctrl, AR_S)
 
-
+#randomizing function for the translate attributes
 def trans_randomized(ctrl, translate_range):
     attrs = ["translateX", "translateY", "translateZ"]
     for attr in attrs:
@@ -54,7 +54,7 @@ def trans_randomized(ctrl, translate_range):
         full_attr_name = f"{ctrl}.{attr}"
         cmds.setAttr(full_attr_name, random_attr_value)
 
-
+#randomizing function for the rotate attributes
 def rot_randomized(ctrl, rotate_range):
     attrs = ["rotateX", "rotateY", "rotateZ"]
     for attr in attrs:
@@ -62,7 +62,7 @@ def rot_randomized(ctrl, rotate_range):
         full_attr_name = f"{ctrl}.{attr}"
         cmds.setAttr(full_attr_name, random_attr_value)
 
-
+#randomizing function for the scale attributes
 def scale_randomized(ctrl, scale_range):
     attrs = ["scaleX", "scaleY", "scaleZ"]
     for attr in attrs:
